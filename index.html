@@ -1,108 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mohamed Gaballa | Portfolio</title>
+    <title>Mohamed Gaballa | Front-End Developer</title>
+
+    <meta name="description"
+        content="Mohamed Gaballa - Front-End Developer Portfolio">
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- HOME -->
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-icon">
+                <span>M</span>
+            </div>
+
+            <span>Mohamed <b>Gaballa</b></span>
+
+        </a>
+
+        <div class="header-actions">
+
+            <button id="themeToggle" class="icon-btn"
+                aria-label="تغيير المظهر">
+
+                <i class="fa-regular fa-moon"></i>
+
+            </button>
+
+            <button id="menuToggle" class="icon-btn"
+                aria-label="فتح القائمة"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="#home">الرئيسية</a>
+
+            <a href="#about">من أنا</a>
+
+            <a href="#skills">مهاراتي</a>
+
+            <a href="#projects">مشاريعي</a>
+
+            <a href="#contact">تواصل معي</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
 
     <section class="home section" id="home">
 
         <div class="home-content">
 
-            <h1>i'm<span>Mohamed Gaballa</span></h1>
+            <div class="availability">
 
-            <h2>
+                <span class="status-dot"></span>
+
+                متاح للعمل كمطور واجهات أمامية
+                (Front-End Developer)
+
+            </div>
+
+
+            <h3 class="welcome">
+                مرحباً، أنا
+            </h3>
+
+
+            <h1 class="main-name" dir="ltr">
+                Mohamed <span>Gaballa</span>
+            </h1>
+
+
+            <div class="typing-container" dir="ltr">
+
                 <span id="typing"></span>
-                <span class="cursor">|</span>
-            </h2>
 
-            <p>
-                مطور ويب مهتم بإنشاء مواقع حديثة وجذابة
-                ومتجاوبة مع جميع الأجهزة، باستخدام
-                أحدث تقنيات تطوير الويب.
+                <span class="cursor">|</span>
+
+            </div>
+
+
+            <p class="home-description">
+
+                مطور واجهات أمامية متخصص في تصميم وتطوير
+                مواقع ويب حديثة وتفاعلية ومتجاوبة مع جميع الأجهزة.
+
+                أعمل باستخدام HTML وCSS وJavaScript
+                وأهتم بإنشاء واجهات مستخدم جذابة
+                وسريعة وسهلة الاستخدام.
+
             </p>
+
 
             <div class="home-buttons">
 
-                <a href="#projects" class="btn">
-                    <i class="fa-solid fa-briefcase"></i>
-                    عرض المشاريع
-                </a>
+                <a href="#contact" class="btn btn-primary">
 
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-regular fa-envelope"></i>
+
                     تواصل معي
+
                 </a>
 
-                <button class="btn btn-outline" id="cvBtn">
+
+                <button id="cvBtn" class="btn btn-primary">
+
                     <i class="fa-solid fa-download"></i>
+
                     تحميل السيرة الذاتية
+
                 </button>
+
+
+                <a href="#projects" class="btn btn-dark">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    عرض المشاريع
+
+                </a>
 
             </div>
 
 
-            <!-- SOCIAL MEDIA -->
+            <!-- SKILLS TAGS -->
+
+            <div class="hero-skills">
+
+                <span class="skills-label">
+                    مجموعة الأدوات الأساسية:
+                </span>
+
+                <span>HTML5</span>
+
+                <span>CSS3</span>
+
+                <span>JavaScript</span>
+
+                <span>React</span>
+                
+                <span>Tailwind</span>
+
+                <span>Bootstrap</span>
+
+                <span>Responsive Design</span>
+
+            </div>
+
+
+            <!-- PROFILE IMAGE -->
+
+            <div class="home-image">
+
+                <div class="image-circle">
+
+                    <img src="img.jpg"
+                        alt="Mohamed Gaballa"
+                        id="profileImage">
+
+                    <div class="image-placeholder"
+                        id="imagePlaceholder">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <span>صورتك هنا</span>
+
+                    </div>
+
+                </div>
+
+                <div class="image-caption">
+
+                    Mohamed Gaballa
+                    • Front-End Developer
+
+                </div>
+
+            </div>
+
+
+            <!-- SOCIAL LINKS -->
 
             <div class="social-links">
 
-                <a href="https://github.com/mohamed-gaballa" class="github" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/mohamed-gaballa"
+                    class="github"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="GitHub">
+
                     <i class="fa-brands fa-github"></i>
+
                 </a>
 
-                <a href="https://www.facebook.com/share/1BwSgkWJmF/" class="facebook" aria-label="Facebook">
+
+                <a href="https://www.facebook.com/share/1BwSgkWJmF/"
+                    class="facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook">
+
                     <i class="fa-brands fa-facebook"></i>
+
                 </a>
 
-                <a href="https://wa.me/qr/WCO4ISWNJZLDC1" class="whatsapp" aria-label="WhatsApp">
+
+                <a href="https://wa.me/qr/WCO4ISWNJZLDC1"
+                    class="whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp">
+
                     <i class="fa-brands fa-whatsapp"></i>
+
                 </a>
 
-                <a href="https://www.instagram.com/mohamed_gaballa6?rpxt=bXJpemtxYmk1YWIy" class="instagram"
+
+                <a href="https://www.instagram.com/mohamed_gaballa6?rpxt=bXJpemtxYmk1YWIy"
+                    class="instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Instagram">
+
                     <i class="fa-brands fa-instagram"></i>
+
                 </a>
 
-                <a href="#" class="linkedin social-placeholder" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/mohamed-gaballa-13387b446"
+                class="linkedin"
+                target="_blank"
+                 target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="linkedin">
+
+                 <i class="fa-brands fa-linkedin"></i>
+
                 </a>
 
-                <a href="#" class="youtube social-placeholder" aria-label="YouTube">
+                <a href="#"
+                    class="youtube social-placeholder"
+                    aria-label="YouTube">
+
                     <i class="fa-brands fa-youtube"></i>
+
                 </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROFILE IMAGE -->
-
-        <div class="home-image">
-
-            <div class="image-circle">
-
-                <!-- صورتك الشخصية هنا -->
-                <!-- ضع الصورة داخل assets باسم profile.jpg -->
-
-                <img src="img.jpg" alt="Mohamed Gaballa" id="profileImage">
-
-                <div class="image-placeholder" id="imagePlaceholder">
-                    <i class="fa-solid fa-user"></i>
-                    <span>صورتك هنا</span>
-                </div>
 
             </div>
 
@@ -111,71 +278,109 @@
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- ================= ABOUT ================= -->
 
     <section class="about section" id="about">
 
         <div class="section-title">
+
             <span>تعرف عليّ</span>
+
             <h2>من <span>أنا؟</span></h2>
+
             <div class="title-line"></div>
+
         </div>
+
 
         <div class="about-container">
 
             <div class="about-text">
 
-                <h3>مرحباً، أنا Mohamed Gaballa</h3>
+                <h3>
+                    مرحباً، أنا
+                    <span>Mohamed Gaballa</span>
+                </h3>
 
                 <p>
-                    مطور ويب مهتم بتطوير واجهات المستخدم
-                    وإنشاء مواقع إلكترونية حديثة وسهلة الاستخدام.
+
+                    مطور واجهات أمامية (Front-End Developer)
+                    مهتم بتطوير مواقع الويب وإنشاء
+                    واجهات مستخدم حديثة وتفاعلية.
+
                 </p>
 
                 <p>
-                    تعلمت HTML وCSS وJavaScript وBootstrap
-                    وReact وNode.js، بالإضافة إلى مجموعة
-                    من المكتبات والأدوات التي تساعدني
-                    على إنشاء تصميمات احترافية.
+
+                    أستخدم HTML وCSS وJavaScript
+                    وBootstrap لبناء مواقع متجاوبة
+                    تعمل بشكل جيد على الهواتف
+                    والأجهزة اللوحية وأجهزة الكمبيوتر.
+
                 </p>
 
                 <p>
-                    أحب البرمجة وتحويل الأفكار إلى مشاريع
-                    حقيقية، وأسعى باستمرار لتطوير مهاراتي
-                    واكتساب خبرات جديدة.
+
+                    أحب تحويل الأفكار إلى مشاريع حقيقية،
+                    وأسعى باستمرار لتطوير مهاراتي
+                    وتعلم تقنيات جديدة في مجال تطوير الويب.
+
                 </p>
 
-                <a href="#contact" class="btn">
+                <a href="#contact" class="btn btn-primary">
+
                     تواصل معي
+
                     <i class="fa-solid fa-arrow-left"></i>
+
                 </a>
 
             </div>
 
+
             <div class="about-cards">
 
                 <div class="info-card">
+
                     <i class="fa-solid fa-code"></i>
+
                     <h3>تطوير الويب</h3>
-                    <p>بناء مواقع وتطبيقات ويب</p>
+
+                    <p>إنشاء مواقع ويب حديثة وتفاعلية</p>
+
                 </div>
 
+
                 <div class="info-card">
+
                     <i class="fa-solid fa-mobile-screen"></i>
+
                     <h3>تصميم متجاوب</h3>
-                    <p>مواقع مناسبة لجميع الأجهزة</p>
+
+                    <p>مواقع متوافقة مع جميع الأجهزة</p>
+
                 </div>
 
+
                 <div class="info-card">
+
                     <i class="fa-solid fa-palette"></i>
+
                     <h3>واجهات المستخدم</h3>
-                    <p>تصميم واجهات جذابة وعصرية</p>
+
+                    <p>تصميم واجهات عصرية وجذابة</p>
+
                 </div>
 
+
                 <div class="info-card">
+
                     <i class="fa-solid fa-laptop-code"></i>
+
                     <h3>مشاريع عملية</h3>
-                    <p>تطبيق المهارات في مشاريع حقيقية</p>
+
+                    <p>تحويل الأفكار إلى مشاريع حقيقية</p>
+
                 </div>
 
             </div>
@@ -185,15 +390,20 @@
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- ================= SKILLS ================= -->
 
     <section class="skills section" id="skills">
 
         <div class="section-title">
+
             <span>التقنيات التي أستخدمها</span>
+
             <h2>مهاراتي <span>التقنية</span></h2>
+
             <div class="title-line"></div>
+
         </div>
+
 
         <div class="skills-container">
 
@@ -226,6 +436,16 @@
                 <i class="fa-brands fa-node-js node-icon"></i>
                 <h3>Node.js</h3>
             </div>
+            
+           <div class="skill-card">
+              <i class="fa-brands fa-Tailwind Tailwind-icon"></i>
+           <h3>Tailwind CSS</h3>
+           </div>
+
+           <div class="skill-card">
+              <i class="fa-brands fa-Background Remover Background Remover-icon"></i>
+           <h3>Background Remover</h3>
+           </div>
 
             <div class="skill-card">
                 <i class="fa-brands fa-git-alt git-icon"></i>
@@ -259,11 +479,13 @@
 
         </div>
 
+
         <div class="extra-skills">
 
             <h3>مهارات إضافية</h3>
 
             <div class="tags">
+
                 <span>DOM</span>
                 <span>Events</span>
                 <span>Functions</span>
@@ -271,6 +493,7 @@
                 <span>CRUD</span>
                 <span>Responsive Design</span>
                 <span>Background Remover</span>
+
             </div>
 
         </div>
@@ -278,15 +501,20 @@
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- ================= PROJECTS ================= -->
 
     <section class="projects section" id="projects">
 
         <div class="section-title">
+
             <span>بعض أعمالي</span>
+
             <h2>أحدث <span>مشاريعي</span></h2>
+
             <div class="title-line"></div>
+
         </div>
+
 
         <div class="filter-buttons">
 
@@ -304,6 +532,7 @@
 
         </div>
 
+
         <div class="projects-container">
 
 
@@ -311,7 +540,8 @@
 
             <div class="project-card" data-category="javascript">
 
-                <img src="stutends.png">
+                <img src="stutends.png"
+                    alt="Student Management System">
 
                 <div class="project-info">
 
@@ -330,27 +560,37 @@
 
                     <div class="project-links">
 
-                        <a href="https://mohamed-gaballa.github.io/Student-Management-System/" target="_blank"
+                        <a href="https://mohamed-gaballa.github.io/Student-Management-System/"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-solid fa-eye"></i>
                             عرض المشروع
+
                         </a>
 
-                        <a href="https://github.com/mohamed-gaballa/Student-Management-System" target="_blank"
+                        <a href="https://github.com/mohamed-gaballa/Student-Management-System"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-brands fa-github"></i>
                             الكود
+
                         </a>
+
                     </div>
 
                 </div>
 
             </div>
-            <!-- CLOTHES STORE -->
+
+
+            <!-- CLOTHING STORE -->
 
             <div class="project-card" data-category="design">
 
-                <img src="store.png" alt="store">
+                <img src="store.png" alt="Online Clothing Store">
+
                 <div class="project-info">
 
                     <h3>Online Clothing Store</h3>
@@ -366,17 +606,25 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="https://mohamed-gaballa.github.io/store/" target="_blank" Live Demo target="_blank"
+
+                        <a href="https://mohamed-gaballa.github.io/store/"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-solid fa-eye"></i>
                             عرض المشروع
+
                         </a>
 
-                        <a href="https://github.com/mohamed-gaballa/store" target="_blank" GitHub target="_blank"
+                        <a href="https://github.com/mohamed-gaballa/store"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-brands fa-github"></i>
                             الكود
+
                         </a>
+
                     </div>
 
                 </div>
@@ -384,19 +632,19 @@
             </div>
 
 
-            <!-- MOVIES STORE -->
+            <!-- MOVIES -->
 
             <div class="project-card" data-category="design">
-                <img src="film.png" alt="film">
+
+                <img src="film.png" alt="Movies Website">
 
                 <div class="project-info">
 
                     <h3>Movies Website</h3>
 
                     <p>
-                        تصميم موقع لعرض الأفلام
-                        باستخدام HTML وCSS فقط،
-                        بدون JavaScript.
+                        تصميم موقع لعرض الأفلام باستخدام
+                        HTML وCSS فقط بدون JavaScript.
                     </p>
 
                     <div class="project-tags">
@@ -405,17 +653,25 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="https://mohamed-gaballa.github.io/Movies/" target="_blank" Live Demo target="_blank"
+
+                        <a href="https://mohamed-gaballa.github.io/Movies/"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-solid fa-eye"></i>
                             عرض المشروع
+
                         </a>
 
-                        <a href="https://github.com/mohamed-gaballa/Movies" target="_blank" GitHub target="_blank"
+                        <a href="https://github.com/mohamed-gaballa/Movies"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-brands fa-github"></i>
                             الكود
+
                         </a>
+
                     </div>
 
                 </div>
@@ -426,8 +682,8 @@
             <!-- PROFIT CALCULATOR -->
 
             <div class="project-card" data-category="javascript">
-                <img src="clculator.png" alt="xluclator">
 
+                <img src="clculator.png" alt="Profit Calculator">
 
                 <div class="project-info">
 
@@ -445,21 +701,31 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="https://mohamed-gaballa.github.io/Calculator/" target="_blank" Live Demo
-                            target="_blank" rel="noopener noreferrer">
+
+                        <a href="https://mohamed-gaballa.github.io/Calculator/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
                             <i class="fa-solid fa-eye"></i>
                             عرض المشروع
+
                         </a>
 
-                        <a href="https://github.com/mohamed-gaballa/Calculator" target="_blank" GitHub target="_blank"
+                        <a href="https://github.com/mohamed-gaballa/Calculator"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-brands fa-github"></i>
                             الكود
+
                         </a>
+
                     </div>
 
                 </div>
+
             </div>
+
 
             <!-- CALCULATOR -->
 
@@ -472,8 +738,8 @@
                     <h3>Calculator</h3>
 
                     <p>
-                        آلة حاسبة لإجراء العمليات الحسابية الأساسية
-                        مثل الجمع والطرح والضرب والقسمة.
+                        آلة حاسبة لإجراء العمليات الحسابية
+                        الأساسية مثل الجمع والطرح والضرب والقسمة.
                     </p>
 
                     <div class="project-tags">
@@ -482,30 +748,37 @@
                         <span>JavaScript</span>
                     </div>
 
-<div class="project-links">
-    <a href="https://mohamed-gaballa.github.io/Calculator./"
-        target="_blank" rel="noopener noreferrer">
-        <i class="fa-solid fa-eye"></i>
-        عرض المشروع
-    </a>
+                    <div class="project-links">
 
-    <a href="https://github.com/mohamed-gaballa/Calculator."
-        target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-github"></i>
-        الكود
-    </a>
-</div>
+                        <a href="https://mohamed-gaballa.github.io/Calculator./"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa-solid fa-eye"></i>
+                            عرض المشروع
+
+                        </a>
+
+                        <a href="https://github.com/mohamed-gaballa/Calculator."
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa-brands fa-github"></i>
+                            الكود
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
 
-
-
             <!-- TASBIH -->
 
             <div class="project-card" data-category="javascript">
+
                 <img src="sebha.png" alt="Tasbih Counter">
 
                 <div class="project-info">
@@ -524,17 +797,25 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="https://mohamed-gaballa.github.io/Tasbih/" target="_blank" Live Demo target="_blank"
+
+                        <a href="https://mohamed-gaballa.github.io/Tasbih/"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-solid fa-eye"></i>
                             عرض المشروع
+
                         </a>
 
-                        <a href="https://github.com/mohamed-gaballa/Tasbih" target="_blank" GitHub target="_blank"
+                        <a href="https://github.com/mohamed-gaballa/Tasbih"
+                            target="_blank"
                             rel="noopener noreferrer">
+
                             <i class="fa-brands fa-github"></i>
                             الكود
+
                         </a>
+
                     </div>
 
                 </div>
@@ -546,15 +827,20 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- ================= CONTACT ================= -->
 
     <section class="contact section" id="contact">
 
         <div class="section-title">
+
             <span>يسعدني التواصل معك</span>
+
             <h2>تواصل <span>معي</span></h2>
+
             <div class="title-line"></div>
+
         </div>
+
 
         <div class="contact-container">
 
@@ -585,19 +871,34 @@
 
                 <div class="input-group">
 
-                    <input type="text" id="name" placeholder="الاسم بالكامل" required>
+                    <input type="text"
+                        id="name"
+                        placeholder="الاسم بالكامل"
+                        required>
 
-                    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                    <input type="email"
+                        id="email"
+                        placeholder="البريد الإلكتروني"
+                        required>
 
                 </div>
 
-                <input type="text" id="subject" placeholder="موضوع الرسالة" required>
+                <input type="text"
+                    id="subject"
+                    placeholder="موضوع الرسالة"
+                    required>
 
-                <textarea id="message" placeholder="اكتب رسالتك هنا..." rows="6" required></textarea>
+                <textarea id="message"
+                    placeholder="اكتب رسالتك هنا..."
+                    rows="6"
+                    required></textarea>
 
-                <button type="submit" class="btn">
+                <button type="submit" class="btn btn-primary">
+
                     إرسال الرسالة
+
                     <i class="fa-solid fa-paper-plane"></i>
+
                 </button>
 
             </form>
@@ -607,15 +908,18 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        <h2>Mohamed<span> Gaballa</span></h2>
+        <h2>Mohamed <span>Gaballa</span></h2>
 
         <p>Front-End Developer</p>
 
-        <p>© <span id="year"></span> Mohamed Gaballa</p>
+        <p>
+            © <span id="year"></span>
+            Mohamed Gaballa
+        </p>
 
     </footer>
 
@@ -623,7 +927,9 @@
     <!-- BACK TO TOP -->
 
     <button id="topBtn" aria-label="الرجوع للأعلى">
+
         <i class="fa-solid fa-arrow-up"></i>
+
     </button>
 
 
