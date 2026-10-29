@@ -4,9 +4,9 @@
 
 let words = [
     "Front-End Developer",
-    "React Developer",
     "JavaScript Developer",
-    "Web Developer"
+    "Web Developer",
+    "Responsive Web Designer"
 ];
 
 let wordIndex = 0;
@@ -19,13 +19,14 @@ function typing() {
 
     let currentWord = words[wordIndex];
 
-    if (deleting == false) {
+    if (deleting === false) {
 
-        typingElement.textContent = currentWord.slice(0, letterIndex + 1);
+        typingElement.textContent =
+            currentWord.slice(0, letterIndex + 1);
 
         letterIndex++;
 
-        if (letterIndex == currentWord.length) {
+        if (letterIndex === currentWord.length) {
 
             deleting = true;
 
@@ -36,17 +37,18 @@ function typing() {
 
     } else {
 
-        typingElement.textContent = currentWord.slice(0, letterIndex - 1);
+        typingElement.textContent =
+            currentWord.slice(0, letterIndex - 1);
 
         letterIndex--;
 
-        if (letterIndex == 0) {
+        if (letterIndex === 0) {
 
             deleting = false;
 
             wordIndex++;
 
-            if (wordIndex == words.length) {
+            if (wordIndex === words.length) {
                 wordIndex = 0;
             }
         }
@@ -57,11 +59,137 @@ function typing() {
     setTimeout(typing, speed);
 }
 
-typing();
+if (typingElement) {
+    typing();
+}
 
 
 // ==================================
-// 2 - FILTER PROJECTS
+// 2 - HEADER MENU
+// ==================================
+
+let menuToggle = document.getElementById("menuToggle");
+
+let navMenu = document.getElementById("navMenu");
+
+menuToggle.onclick = function () {
+
+    navMenu.classList.toggle("active");
+
+    let isOpen = navMenu.classList.contains("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    if (isOpen) {
+
+        menuToggle.innerHTML =
+            '<i class="fa-solid fa-xmark"></i>';
+
+    } else {
+
+        menuToggle.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+    }
+
+};
+
+
+// ==================================
+// 3 - CLOSE MENU AFTER CLICK
+// ==================================
+
+let navLinks = document.querySelectorAll(".nav-menu a");
+
+navLinks.forEach(function (link) {
+
+    link.onclick = function () {
+
+        navMenu.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+    };
+
+});
+
+
+// ==================================
+// 4 - CLOSE MENU OUTSIDE
+// ==================================
+
+document.addEventListener("click", function (event) {
+
+    if (
+        !navMenu.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ) {
+
+        navMenu.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+    }
+
+});
+
+
+// ==================================
+// 5 - DARK / LIGHT MODE
+// ==================================
+
+let themeToggle = document.getElementById("themeToggle");
+
+let savedTheme = localStorage.getItem("portfolioTheme");
+
+function updateThemeIcon() {
+
+    if (document.body.classList.contains("light")) {
+
+        themeToggle.innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
+
+    } else {
+
+        themeToggle.innerHTML =
+            '<i class="fa-regular fa-moon"></i>';
+
+    }
+
+}
+
+if (savedTheme === "light") {
+
+    document.body.classList.add("light");
+
+}
+
+updateThemeIcon();
+
+themeToggle.onclick = function () {
+
+    document.body.classList.toggle("light");
+
+    let currentTheme =
+        document.body.classList.contains("light")
+            ? "light"
+            : "dark";
+
+    localStorage.setItem("portfolioTheme", currentTheme);
+
+    updateThemeIcon();
+
+};
+
+
+// ==================================
+// 6 - FILTER PROJECTS
 // ==================================
 
 let filterButtons = document.querySelectorAll(".filter-btn");
@@ -84,9 +212,13 @@ filterButtons.forEach(function (button) {
 
         projects.forEach(function (project) {
 
-            let projectCategory = project.getAttribute("data-category");
+            let projectCategory =
+                project.getAttribute("data-category");
 
-            if (category == "all" || category == projectCategory) {
+            if (
+                category === "all" ||
+                category === projectCategory
+            ) {
 
                 project.style.display = "block";
 
@@ -104,7 +236,7 @@ filterButtons.forEach(function (button) {
 
 
 // ==================================
-// 3 - BACK TO TOP
+// 7 - BACK TO TOP
 // ==================================
 
 let topBtn = document.getElementById("topBtn");
@@ -126,18 +258,20 @@ window.addEventListener("scroll", function () {
 topBtn.onclick = function () {
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 };
 
 
 // ==================================
-// 4 - CONTACT FORM
+// 8 - CONTACT FORM
 // ==================================
 
-// ضع بريدك هنا لتفعيل إرسال الرسائل
 let myEmail = "mhmgalj542@gmail.com";
 
 let contactForm = document.getElementById("contactForm");
@@ -154,7 +288,7 @@ contactForm.onsubmit = function (event) {
 
     let message = document.getElementById("message").value;
 
-    if (myEmail == "") {
+    if (myEmail === "") {
 
         alert("نموذج التواصل غير مفعل حالياً");
 
@@ -177,7 +311,7 @@ contactForm.onsubmit = function (event) {
 
 
 // ==================================
-// 5 - CV BUTTON
+// 9 - CV BUTTON
 // ==================================
 
 let cvBtn = document.getElementById("cvBtn");
@@ -190,7 +324,7 @@ cvBtn.onclick = function () {
 
 
 // ==================================
-// 6 - PROFILE IMAGE
+// 10 - PROFILE IMAGE
 // ==================================
 
 let profileImage = document.getElementById("profileImage");
@@ -221,11 +355,11 @@ if (profileImage.complete && profileImage.naturalWidth > 0) {
 
 
 // ==================================
-// 7 - SCROLL ANIMATIONS
+// 11 - SCROLL ANIMATIONS
 // ==================================
 
 let animatedElements = document.querySelectorAll(
-    ".info-card, .skill-card, .project-card, .about-text"
+    ".info-card, .skill-card, .project-card, .about-text, .contact-info"
 );
 
 animatedElements.forEach(function (element) {
@@ -234,33 +368,45 @@ animatedElements.forEach(function (element) {
 
 });
 
-let observer = new IntersectionObserver(function (entries) {
+if ("IntersectionObserver" in window) {
 
-    entries.forEach(function (entry) {
+    let observer = new IntersectionObserver(function (entries) {
 
-        if (entry.isIntersecting) {
+        entries.forEach(function (entry) {
 
-            entry.target.classList.add("show");
+            if (entry.isIntersecting) {
 
-            observer.unobserve(entry.target);
+                entry.target.classList.add("show");
 
-        }
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.1
+    });
+
+    animatedElements.forEach(function (element) {
+
+        observer.observe(element);
 
     });
 
-}, {
-    threshold: 0.1
-});
+} else {
 
-animatedElements.forEach(function (element) {
+    animatedElements.forEach(function (element) {
 
-    observer.observe(element);
+        element.classList.add("show");
 
-});
+    });
+
+}
 
 
 // ==================================
-// 8 - FOOTER YEAR
+// 12 - FOOTER YEAR
 // ==================================
 
 document.getElementById("year").textContent =
@@ -268,7 +414,7 @@ document.getElementById("year").textContent =
 
 
 // ==================================
-// 9 - SOCIAL LINKS
+// 13 - SOCIAL LINKS
 // ==================================
 
 let emptySocialLinks = document.querySelectorAll(
@@ -284,5 +430,27 @@ emptySocialLinks.forEach(function (link) {
         alert("سيتم إضافة رابط الحساب قريباً");
 
     };
+
+});
+
+
+// ==================================
+// 14 - HEADER SCROLL EFFECT
+// ==================================
+
+let header = document.querySelector(".header");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 50) {
+
+        header.style.boxShadow =
+            "0 5px 30px rgba(0, 0, 0, 0.25)";
+
+    } else {
+
+        header.style.boxShadow = "none";
+
+    }
 
 });
